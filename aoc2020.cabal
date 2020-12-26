@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b1ab56df8f0df56351449847366508ed5943d6e3f97849cf372d4811a83ae0dd
+-- hash: c7e0fffeacf67197077317e7ad5744d4320daee821c04551faadf0b142c5a939
 
 name:           aoc2020
 version:        0.1.0.0
@@ -17,8 +17,6 @@ copyright:      2020 Author name here
 license:        BSD3
 license-file:   LICENSE
 build-type:     Simple
-extra-source-files:
-    README.md
 
 source-repository head
   type: git
@@ -33,6 +31,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , trifecta
   default-language: Haskell2010
 
 test-suite aoc2020-test
@@ -46,4 +45,5 @@ test-suite aoc2020-test
   build-depends:
       aoc2020
     , base >=4.7 && <5
+    , trifecta
   default-language: Haskell2010

@@ -6,7 +6,7 @@ author:              "Jo Hsi"
 maintainer:          "example@example.com"
 copyright:           "2020 Author name here"
 
-extra-source-files:
+# extra-source-files:
 # - README.md
 # - ChangeLog.md
 
@@ -21,6 +21,7 @@ description:         Please see the README on GitHub at <https://github.com/gith
 
 dependencies:
 - base >= 4.7 && < 5
+- trifecta
 
 library:
   source-dirs: src
