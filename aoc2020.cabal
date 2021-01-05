@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: ca401239338e5ff4806767ecca8325b0729540c67f7ba050c473245c6ad357cb
+-- hash: feaa4a3f0d90eeb0f4d0378d149b7e7eaed2a571c26ca896f1cc7aab7b345171
 
 name:           aoc2020
 version:        0.1.0.0
@@ -31,6 +31,7 @@ library
       src
   build-depends:
       base >=4.7 && <5
+    , containers
     , raw-strings-qq
     , split
     , trifecta
@@ -47,6 +48,7 @@ test-suite aoc2020-test
   build-depends:
       aoc2020
     , base >=4.7 && <5
+    , containers
     , raw-strings-qq
     , split
     , trifecta

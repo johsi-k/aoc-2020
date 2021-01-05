@@ -24,6 +24,7 @@ dependencies:
 - trifecta
 - split
 - raw-strings-qq
+- containers
 
 library:
   source-dirs: src
