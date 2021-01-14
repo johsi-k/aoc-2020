@@ -104,6 +104,17 @@ allAncestors bag bagMap =
            else go ancestorSet <> ancestorSet
   in go (Set.singleton bag)
 
+allChildren :: String -> Map String (Map String Int) -> Maybe Int
+allChildren bag bagMap = do
+  c <- Map.lookup bag bagMap
+  let countChildren :: Map String Int -> Maybe Int
+      countChildren = Map.foldrWithKey rf (Just 1)
+        where rf b n acc = do
+                 acc' <- acc
+                 c'   <- allChildren b bagMap
+                 return $ n * c' + acc'
+  if null c then Just 1 else countChildren c
+
 -- pretty printing
 pp :: (Show k, Show a) => Map k a -> String
 pp = Map.foldMapWithKey (\k v -> show k ++ ": " ++ show v ++ "\n")
@@ -115,6 +126,9 @@ ppn = Map.foldMapWithKey (\k m -> show k ++ ":\n  " ++ pp m)
 day7 :: IO ()
 day7 = do
   contents <- readFile "input.txt"
-  let bagSet = Map.fromList $ (fmap . fmap) Map.fromList (unwrap (lines contents))
+  let bagMap = Map.fromList $ (fmap . fmap) Map.fromList (unwrap (lines contents))
 
-  print $ Set.size $ allAncestors "shiny gold" bagSet
+  print $ Set.size $ allAncestors "shiny gold" bagMap
+
+  -- decrement for off-by-one since original bag is not counted
+  print $ pred <$> allChildren "shiny gold" bagMap
