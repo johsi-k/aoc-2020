@@ -25,6 +25,7 @@ dependencies:
 - split
 - raw-strings-qq
 - containers
+- vector
 
 library:
   source-dirs: src

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: feaa4a3f0d90eeb0f4d0378d149b7e7eaed2a571c26ca896f1cc7aab7b345171
+-- hash: 234946292d1c84752e35cfd7112990d6a9fc116dade80f1ce793df692ad7cd5e
 
 name:           aoc2020
 version:        0.1.0.0
@@ -35,6 +35,7 @@ library
     , raw-strings-qq
     , split
     , trifecta
+    , vector
   default-language: Haskell2010
 
 test-suite aoc2020-test
@@ -52,4 +53,5 @@ test-suite aoc2020-test
     , raw-strings-qq
     , split
     , trifecta
+    , vector
   default-language: Haskell2010
